@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>SVG Simulation</title>
+</head>
+
+<body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.1/svg.min.js"></script>
+  <script src="main.js"></script>
+
+  Vektorgrafik:
+  <div id="workframe" style="border: 1px solid; border-color: darkgrey;">
+    <svg width="100%" height="400" id="drawing">
+      <g id="Haus" type="group">
+        <text fill="#000000" font-family="Arial" font-size="18" id="Haus_label" stroke="#000000" stroke-dasharray="null"
+          stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" x="75" xml:space="preserve"
+          y="50">Haus</text>
+        <g id="Haus.Dach" type="group">
+          <polygon points="45,165 175,50 305,165" fill="#ff0000" id="Haus.Dach_obj" type="polygon" stroke="#000000"
+            stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="5" />
+          <text fill="#ffffff" font-family="Arial" font-size="18" id="Haus.Dach_label" stroke="#000000"
+            stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle"
+            x="176.100006" xml:space="preserve" y="128">Dach</text>
+        </g>
+        <g id="Haus.Wand" type="group">
+          <rect fill="#ffff00" height="218" id="Haus.Wand_obj" stroke="#000000" stroke-width="5" width="250" x="50"
+            y="165" type="rect" />
+          <text fill="#000000" font-family="Arial" font-size="18" id="Haus.Wand_label" stroke="#000000"
+            stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle"
+            x="232.100006" xml:space="preserve" y="208">Wand</text>
+
+          <g id="Haus.Wand.Fenster" type="group">
+            <rect fill="#00ffff" height="61" id="Haus.Wand.Fenster_obj" stroke="#000000" stroke-dasharray="null"
+              stroke-linecap="null" stroke-linejoin="null" stroke-width="5" width="60" x="85" y="208" type="rect" />
+            <text fill="#000000" font-family="Arial" font-size="18" id="Haus.Wand.Fenster_label" stroke="#000000"
+              stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle"
+              x="116.100006" xml:space="preserve" y="292">Fenster</text>
+          </g>
+          <g id="Haus.Wand.Tuer" type="group">
+            <rect fill="#7f0000" height="114" id="Haus.Wand.Tuer_obj" type="rect" stroke="#000000" stroke-dasharray="null"
+              stroke-linecap="null" stroke-linejoin="null" stroke-width="5" width="62" x="188" y="268" />
+            <text fill="#ffffff" font-family="Arial" font-size="18" id="Haus.Wand.Tuer_label" stroke="#000000"
+              stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle"
+              x="218.100006" xml:space="preserve" y="349">Tuer</text>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <button class="btn btn-secondary" style="margin-top: 5px" onclick="toggleLabels()">Namen ein-/ausblenden!</button>
+  <button class="btn btn-secondary" style="margin-top: 5px; float: right" onclick="reInit();">Zurücksetzen</button>
+  <p></p>
+  Befehlseingabe:<br />
+  <textarea style="width: 100%; border: 1px solid; border-color: darkgrey;" rows="4" id="jsinput"></textarea>
+  <br />
+  <button class="btn btn-primary" style="margin-top: 5px" onclick="runCmd()">Los!</button>
+  <span
+    style="margin-top: 5px; padding: 5px 10px 5px 10px; border: 1px solid; border-color: darkgrey; color: darkgrey; float: right"
+    id="results">Wenn ein Befehl mit einem ? beginnt, wird hier das Ergebnis ausgegeben (sofern vorhanden).</span>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Vektorgrafik-Simulation Anleitung</title>
+  </head>
+  <body>
+    <p>Die Objekte für die Vektorgrafik Simulation kennen folgende Methoden
+      (Befehle) und Attribute (Eigenschaften):<br>
+      <br>
+      <b>Methoden:</b></p>
+    <ul>
+      <li><b>move(<i>x,y</i>)</b>: bewegt das Objekt nach links/rechts (x) und
+        oben/unten (y). <i>x</i> und <i>y</i> sind Zahlen größer oder kleiner
+        0.</li>
+      <li><b>hide()</b>: versteckt das Objekt</li>
+      <li><b>show():</b> zeigt das Objekt wieder</li>
+      <li><b>fill("<i>color</i>"):</b> füllt das Objekt mit einer Farbe, "<i>color</i>"
+        ist eine Zeichenkette.</li>
+      <li><b>rotate(<i>x</i>)</b>: rotiert das Objekt um <i>x </i>Grad im
+        Uhrzeigersinn. <i>x</i> ist eine Zahl zwischen 0 und 360.</li>
+      <li><b>add("<i>id</i>"): (gilt nur Gruppenobjekte)</b>: fügt ein Objekt
+        mit der ID "<i>id</i>" zur Gruppe als Unterobjekte hinzu.</li>
+      <li><b>back():</b> versetzt ein Objekt in den Hintergrund</li>
+      <li><b>front():</b> versetzt ein Objekt in den Vordergrund</li>
+    </ul>
+    <p><b>Methoden des gesamten Zeichendokuments (id: "drawing")<br>
+      </b></p>
+    <ul>
+      <li><b>createRect("<i>id</i>", [<i>x</i>, <i>y</i>, <i>width</i>, <i>height</i>,
+          "<i>fillcolor</i>"]):</b> erstellt ein Rechteck mit der ID "<i>id</i>"
+        an der Position <i>x, y</i>, mit der Breite <i>width </i>und der Höhe
+        <i>height </i>und der Füllfarbe "<i>fillcolor</i>". Die "<i>id</i>"
+        muss angegeben werden, die anderen Angaben können, aber müssen nicht,
+        angegeben werden.</li>
+      <li><b>createCircle("<i>id</i>", [<i>x</i>, <i>y</i>, <i>radius</i>, "<i>fillcolor</i>"])</b>:
+        erstellt einen&nbsp; Kreis mit der ID "<i>id</i>" an der Position <i>x,
+          y,</i> mit Radius "<i>radius</i>" und der Füllfarbe "<i>fillcolor</i>".
+        Die "<i>id</i>" muss angegeben werden, die anderen Angaben können, aber
+        müssen nicht, angegeben werden.</li>
+      <li><b>createLine("<i>id</i>", [<i>x1, y1, x2, y2</i>, "<i>stroke</i>"]):</b>
+        erstellt eine&nbsp; Linie mit der ID "<i>id</i>", die bei der Position <i>x1,
+          y1</i> beginnt und bei <i>x2, y2</i> endet und setzt die Linienfarbe
+        "<i>stroke</i>". Die "<i>id</i>" muss angegeben werden, die anderen
+        Angaben können, aber müssen nicht, angegeben werden.</li>
+      <li><b>createPolygon("<i>id</i>", ["<i>points</i>", "<i>fillcolor</i>"])</b>:
+        erstellt ein Polygon mit der ID "<i>id</i>" mit den Eckpunkten "<i>points</i>"
+        und der Füllfarbe "<i>fillcolor</i>". "<i>points</i>" ist eine Liste mit
+        beliebig vielen x,y-Werten, die mit Leerzeichen getrennt sind (siehe
+        Tipps unten). Die "<i>id</i>" muss angegeben werden, die anderen Angaben
+        können, aber müssen nicht, angegeben werden.</li>
+      <li><b>createGroup("<i>id</i>"):</b> erstellt eine Gruppe mit der ID "<i>id</i>".
+        Danach können andere Objekte hinzugefügt werden (siehe oben: add).</li>
+    </ul>
+    <p><b>Attribute:</b></p>
+    <ul>
+      <li><b>fillcolor:</b> Farbe der Füllung (Zeichenkette)</li>
+      <li><b>stroke:</b> Linienfarbe (Zeichenkette)</li>
+      <li><b>stroke-width:</b> Linienstärke in Pixel (Zahl)</li>
+      <li><b>height:</b> Höhe in Pixel (Zahl)</li>
+      <li><b>width:</b> Breite in Pixel (Zahl)</li>
+      <li><b>x:</b> Linke Ecke als Abstand vom linken Rahmen (Zahl)</li>
+      <li><b>y:</b> Obere Ecke als Abstand vom oberen Rahmen (Zahl)</li>
+    </ul>
+    <p><br>
+      <b>Tipps:</b></p>
+    <ul>
+      <li>Groß und Kleinschreibung müssen beachtet werden. Alle Objekte in
+        diesem Dokument beginnen mit einem Großbuchstaben!</li>
+      <li>Wenn mehr als eine Befehlszeile eingeben wird, müssen diese immer mit
+        einem Strichpunkt ";" abgeschlossen werden.</li>
+      <li>Nicht alle Objekte unterstützen alle oben genannten Methoden und/oder
+        Attribute, einfach ausprobieren.</li>
+      <li>Oft ist es sinnvoll erst mal herauszufinden welcher der aktuelle
+        Attributwert ist bevor man ihn ändert, dann kann man ihn leichter wieder
+        zurücksetzen. Abfragen lassen sich die Attributwerte mit einem
+        vorangestellten Fragezeichen "?".</li>
+      <li>Um eine Zeile vorübergehend nicht ausführen zu lassen, kannst Du sie
+        "auskommentieren" - einfach an den Anfang der Zeile zwei <span style="font-family: Courier New,Courier,monospace;">//</span>
+        stellen. </li>
+      <li><b>ACHTUNG</b>: Das Dach ist ein Polygon (genauer: von der Klasse
+        "Polygon", da es hier keine Klasse Dreieck gibt). Daher hat es keine
+        Attribute für Höhe, Breite, x oder y, sondern nur ein Attribut namens
+        "points" in dem die Eckpunkte festgelegt sind in der Form "x,y". In
+        Falle des Dachs also Linke Ecke, Obere Ecke und rechte Ecke, als (x1,y1
+        x2,y2 x3,y3). Versuche doch mal herauszufinden, wie Du damit das Dach
+        höher machen kannst.&nbsp; </li>
+      <li>Du findest die Namen der Farben hier: <a href="https://wiki.selfhtml.org/wiki/Grafik/Farbpaletten"
+          target="_blank">https://wiki.selfhtml.org/wiki/Grafik/Farbpaletten</a>
+        (nicht von den vielen Zahlen irritieren lassen, einfach die Englischen
+        Namen verwenden)</li>
+    </ul>
+    <p><b>Beispiele (für mögliche Befehlseingaben)</b>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </p>
+    <ul>
+      <li><span style="font-family: Courier New,Courier,monospace;">Haus.move(20);</span></li>
+      <li><span style="font-family: Courier New,Courier,monospace;">Haus.Dach.fillcolor
+          = "green";</span></li>
+      <li><span style="font-family: Courier New,Courier,monospace;">Haus.Wand.Fenster.hide();</span></li>
+      <li><span style="font-family: Courier New,Courier,monospace;">Haus.Wand.Tuer.width
+          = 50;</span></li>
+      <li><span style="font-family: Courier New,Courier,monospace;">createRect("Stamm",
+          400, 200, 40, 180, "brown");</span></li>
+      <li><span style="font-family: Courier New,Courier,monospace;">createCircle("Krone",
+          350, 100, 140, "green");</span></li>
+      <li><span style="font-family: Courier New,Courier,monospace;">createPolygon("Stern",
+          "400,0 410,40 450,50 410,60 400,100 390,60 350,50 390,40", "yellow")</span></li>
+    </ul>
+  </body>
+</html>
