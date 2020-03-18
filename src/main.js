@@ -1,3 +1,9 @@
+/*
+ * SVGObjSim - V1.0.0 - 03/20/2020
+ * 
+ * Copyright (c) 2020 Ralph Pieper-Woerle; Licensed GNU General Public
+ */
+
 var initFrame;
 
 document.addEventListener("DOMContentLoaded", function (event) {
